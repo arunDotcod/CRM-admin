@@ -1,0 +1,12 @@
+node_modules/
+/.next/
+/.next-*/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Local env and dev-only secrets (never commit)
+.env
+.env.*
+!.env.example
+/.local/

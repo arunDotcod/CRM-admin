@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "admin",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd /d C:\Applications\CRM\CRM-admin && npx next dev --hostname 127.0.0.1 --port 8090"],
+      "port": 8090,
+      "url": "http://127.0.0.1:8090"
+    },
+    {
+      "name": "admin-api",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:\Applications\CRM\CRM-admin\scripts\dev-api.mjs"],
+      "port": 4150,
+      "url": "http://127.0.0.1:4150"
+    }
+  ]
+}
