@@ -26,8 +26,15 @@ entitlement state), `usage-meter.jsx` (used / limit bar, amber at 80 %, red at 1
 `CRM-backend-server/scripts/seed-bo17-admin-customers.ts` (slug prefix `bo17-seed-`, `--reset` /
 `--remove`).
 
-Placeholders (right titles, routes and permission checks; filled later): Customer detail `/customers/[id]` (BO18), Staff and Audit log (BO19), New customer
-`/customers/new` and Settings (BO28).
+**BO19:** Staff (`/staff`, SUPER_ADMIN): list, invite, edit name/role, disable/enable, reset two-step,
+resend setup link. Invite and resend return a one-time `setupUrl` (no email is sent yet, an open
+decision in api-contracts §12.6); `components/staff/setup-link-panel.jsx` is the only component that
+shows it, so switching to emailed links means replacing that one panel. Audit log (`/audit`,
+SUPER_ADMIN + OPS): staff / organization / action / date filters in the URL, cursor "Load more",
+expandable before / after. Helpers in `lib/staff.js` and `lib/audit.js`.
+
+**BO28 Settings:** `/settings` (SUPER_ADMIN): signup alert emails, default limits, grace days, pending
+seat cap, expiry notice days (`lib/settings.js`, `components/settings/settings-form.jsx`).
 
 ## Layout
 

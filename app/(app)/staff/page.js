@@ -1,12 +1,12 @@
-import { ComingSoon, PageHeader, RequirePermission } from '@/components/shell/page';
+import { RequirePermission } from '@/components/shell/page';
+import { StaffManager } from './staff-manager';
 
 export const metadata = { title: 'Staff' };
 
 export default function Page() {
   return (
     <RequirePermission permission="admin.staff.manage">
-      <PageHeader title="Staff" description="Invite staff, change roles, disable accounts and reset two-step verification." />
-      <ComingSoon task="BO19">Staff list with invite, role change, disable and TOTP reset.</ComingSoon>
+      <StaffManager />
     </RequirePermission>
   );
 }
